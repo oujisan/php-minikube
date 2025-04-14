@@ -1,0 +1,28 @@
+# File: php-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php
+  template:
+    metadata:
+      labels:
+        app: php
+    spec:
+      containers:
+        - name: php
+          image: php:apache
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: php-files
+              mountPath: /var/www/html/index.php
+              subPath: index.php
+      volumes:
+        - name: php-files
+          configMap:
+            name: php-index
