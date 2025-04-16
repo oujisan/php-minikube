@@ -7,7 +7,7 @@ $serverTime = date("Y-m-d H:i:s");
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Jam Real-Time di Kubernetes</title>
+    <title>UTS Cloud Computing</title>
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
